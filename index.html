@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letter / Number Press</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .box{
+            position: absolute;
+            display: inline-block; 
+            /* font-family: "Nunito", sans-serif; */
+            /* height: 10px; */
+font-weight: bolder;
+text-transform: capitalize;
+            padding: 10px;font-size: 20px !important;
+            border-radius: 30px;
+            /* width: 10px; */
+            color: rgb(255, 251, 243);
+            transition: 0.3s ease-in-out;
+            /* background-color: rgb(212, 212, 212); */
+        }
+        #main{
+            position: relative;            transition: 1.5s ease !important;
+            
+            height: 100vh;
+        }
+        .container-fluid{
+            font-family: "Press Start 2P", system-ui;
+            /* font-family: "Nunito", sans-serif !important;  */
+        background: rgb(217,158,64);
+        background: linear-gradient(90deg, rgba(217,158,64,1) 0%, rgba(255,140,103,1) 90%);
+
+        }
+        .bg{
+            margin: 7px 10px;
+border-radius: 20px;
+text-align: center;
+color:  rgba(255,140,103,1);
+            background-color: white;
+            padding: 10px !important;
+            /* width: 20px $; */
+            
+        }
+        .bg1{
+            position: fixed;
+            right: 10px;
+            margin: 7px 10px;
+border-radius: 20px;
+text-align: center;
+color:  rgba(255,140,103,1);
+            background-color: white;
+            padding: 10px !important;
+            top: 0px;
+            right: 0px;
+        }
+        .ins{
+            background-color: white;
+            /* height: 400px; */
+            position: fixed;
+            z-index: 2;
+            padding: 20px;
+            border-radius: 15px;
+        }
+        .ins1{box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+            background-color: white;
+            /* height: 400px; */
+            position: fixed;
+            z-index: 2;
+            padding: 150px;
+            border-radius: 15px;
+        }
+        .ins1>h6{
+            padding: 10px;
+        }
+        h3,h6{
+color: white;
+padding: 5px;
+border-radius: 5px;
+text-align: center;
+            background-color: rgb(255, 156, 103);;
+        }
+        p{
+            color: rgb(80, 80, 80);
+            font-size: 12px;
+            font-weight: 100 !important;
+        }
+        button{
+            padding: 10px;
+            border: none;
+            cursor:no-drop;
+            text-align: center;
+            background-color: transparent;
+            color:rgb(240, 177, 76);
+            /* background-color:rgb(240, 177, 76)  */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
+   <div class="ins col-xl-5 col-11 " id="ins">
+    <h3>Instruction</h3>
+<h6 class="col-4"> Gameplay:</h6>
+<p>Press the matching key on your keyboard as quickly as possible.</p>
+<h6 class="col-8">Winning the Game:</h6>
+<p>Achieve a score of 50 or more within the 30-second time limit to win.</p>
+<h6 class="col-5">Good Luck:</h6>
+<p>Stay focused and react swiftly. Practice to improve your speed and accuracy.</p>
+<button id="str">Start Game</button>  
+</div>
+ <div class="ins1" id="ins1">
+    <!-- <h6  class="" >Progress :<span id="scr">${score}</span> </h6 ><BR>
+    <h6 class="" >Time :<span id="scr">${score1}</span> </h6 >
+    <BR>
+       <h6  class="" ><span id="scr11">Play Again <i class="fa fa-refresh" aria-hidden="true"></i>
+    </span> </h6 > -->
+</div> 
+        <div class="fixed-top bg col-xl-3 col-5 ">
+        <span class="" >Progress :<span id="scr">0</span> </span>
+    </div>
+    <div class="   bg1 col-xl-2 col-5 ">
+        <span class="" >TIME : <span id="scr1">0</span> </span>
+    </div>
+        <div class="col-4" id="main">
+
+    </div>
+</div>
+    <script>
+        // document.getElementById("scr11").addEventListener("click",()=>{
+        //     location.reload()
+        document.getElementById("ins1").style.display="none"
+        // })
+        document.getElementById("str").addEventListener("click",()=>{
+            // console.log("Re");
+            document.getElementById("ins").style.display="none"
+            str()
+        
+        })
+        var arr=[]
+        var score=0
+        var score1=0
+        var letters = "abcdefghijklmnopqrstuvwxyz12345678910";
+        var main=document.getElementById("main")
+        function create(){
+    var div=document.createElement("div")
+    var rand1=Math.floor(Math.random()*letters.length)
+    div.className="box";
+    
+        div.innerHTML=letters[rand1]
+    
+    arr.push(div)
+    main.appendChild(div)
+    document.addEventListener("keypress",(e)=>{
+
+        if(e.key === div.innerHTML){
+            document.getElementById("scr").innerHTML=score++;
+            main.removeChild(div)
+
+        }
+    })
+}
+function move(){
+    document.getElementById("scr1").innerHTML=score1++;
+    if(score1>30){
+                document.getElementById("ins1").style.display="block"
+  var div=document.getElementById("ins1");
+//   document.getElementById("ins").;
+  div.innerHTML=`
+
+    <h6  class="" >Progress :<span id="scr">${score}</span> </h6 ><BR>
+    <h6 class="" >Time :<span id="scr">${score1}</span> </h6 >
+    <BR>
+       <h6  class="" ><span id="scr11">Play Again <i class="fa fa-refresh" aria-hidden="true"></i>
+    </span> </h6 >
+
+  `
+     document.getElementById("scr11").addEventListener("click",()=>{
+            location.reload()
+        })
+  stop()
+//   document.removeEventListener(str)
+    }
+    for(var i=0;i<arr.length;i++){
+        var rand=Math.ceil(Math.random()* (main.offsetWidth - 40))
+    var curpos=parseInt( arr[i].style.top)||0;
+    curpos+=60
+    arr[i].style.top=`${curpos}px`
+        arr[i].style.left=`${rand}px`
+    
+    
+// console.log(main.offsetHeight);
+        if(curpos > main.offsetHeight -70){
+    arr[i].style.display="none"
+    // arr.splice(i,1)
+        }
+    }
+// console.log(arr);
+}
+var createInterval;
+var moveInterval;
+
+function str(){
+    createInterval=setInterval(create,750)
+    moveInterval=setInterval(move,700)
+}
+function stop() {
+  clearInterval(createInterval);
+  clearInterval(moveInterval);
+}
+</script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
