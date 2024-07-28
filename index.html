@@ -250,12 +250,12 @@
             clearInterval(moveInterval);
         }
 
-        // window.onload = function () {
-        //     if (window.innerWidth <= 992) {
-        //         document.getElementById("hiddenInput").style.display = 'block';
-        //         document.getElementById("hiddenInput").focus();
-        //     }
-        // };
+        window.onload = function () {
+            if (window.innerWidth <= 992) {
+                document.getElementById("hiddenInput").style.display = 'block';
+                document.getElementById("hiddenInput").focus();
+            }
+        };
 
         window.onresize = function () {
             if (window.innerWidth <= 992) {
