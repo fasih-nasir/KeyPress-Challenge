@@ -142,14 +142,21 @@ h6{
         }input{
             background-color: rgb(69, 69, 69);
             outline: none;
+            position: absolute;display: none;
+            bottom: 10px;
             border: none;
-            margin-bottom: 5px;     color:rgb(188, 231, 45);;
+                 color:rgb(188, 231, 45);;
             padding: 5px 5px;
         }input::placeholder{
             font-size: 10px;
             text-align: center;
         }
-    </style>
+@media (max-width:992px) {
+    input{
+        display: block;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -178,7 +185,7 @@ h6{
             <span class="">TIME : <span id="scr1">0</span> </span>
         </div>
         <div class="col-xl-7 col-11" id="main">
-
+            
         </div>
         <input type="text" id="hiddenInput" placeholder="Press the matching key " >
     </div>
@@ -207,9 +214,27 @@ h6{
 
             arr.push(div)
             main.appendChild(div)
+            // var inp;
+            // document.getElementById("hiddenInput").addEventListener("input",()=>{
+                // })
+                
+                // console.log(inp);
+                
+                document.getElementById("hiddenInput").addEventListener("input",()=>{
+                    document.addEventListener("keypress", (e) => {
+                    var inp=document.getElementById("hiddenInput");
+    
+                    if(gameover) return;
+                if (e.key === inp.value ) {
+                    document.getElementById("scr").innerHTML = score++;
+                    main.removeChild(div)
+
+                }
+            })
+            })
             document.addEventListener("keypress", (e) => {
                 if(gameover) return;
-                if (e.key === div.innerHTML) {
+                if (e.key === div.innerHTML ) {
                     document.getElementById("scr").innerHTML = score++;
                     main.removeChild(div)
 
