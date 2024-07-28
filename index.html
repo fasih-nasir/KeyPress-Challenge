@@ -221,17 +221,17 @@ h6{
                 // console.log(inp);
                 
                 document.getElementById("hiddenInput").addEventListener("input",()=>{
-                    document.addEventListener("keypress", (e) => {
+                 
                     var inp=document.getElementById("hiddenInput");
-    
+    console.log(inp.value);
                     if(gameover) return;
-                if (e.key === inp.value ) {
+                if (div.innerHTML === inp.value ) {
                     document.getElementById("scr").innerHTML = score++;
                     main.removeChild(div)
 
                 }
             })
-            })
+            
             document.addEventListener("keypress", (e) => {
                 if(gameover) return;
                 if (e.key === div.innerHTML ) {
