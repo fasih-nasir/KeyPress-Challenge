@@ -20,33 +20,25 @@
         .box {
             position: absolute;
             display: inline-block;
-            /* font-family: "Nunito", sans-serif; */
-            /* height: 10px; */
             font-weight: bolder;
             text-transform: capitalize;
             padding: 10px;
             font-size: 20px !important;
             border-radius: 30px;
-            /* width: 10px; */
             color: rgb(255, 251, 243);
             transition: 0.3s ease-in-out;
-            /* background-color: rgb(212, 212, 212); */
         }
 
         #main {
             padding: 30px 0px;
-            /* border: 2px solid rgb(188, 231, 45);; */
             position: relative;
-            /* transition: 1.5s ease !important; */
-
             height: 100vh;
         }
 
         .container-fluid {
             font-family: "Press Start 2P", system-ui;
-            /* font-family: "Nunito", sans-serif !important;  */
             background: rgb(38,38,38);
-background: linear-gradient(90deg, rgb(17, 17, 17) 24%, rgb(28, 26, 26) 100%);
+            background: linear-gradient(90deg, rgb(17, 17, 17) 24%, rgb(28, 26, 26) 100%);
         }
 
         .bg {
@@ -54,10 +46,7 @@ background: linear-gradient(90deg, rgb(17, 17, 17) 24%, rgb(28, 26, 26) 100%);
             border-radius: 20px;
             text-align: center;
             color: rgb(188, 231, 45);
-            /* background-color: white; */
             padding: 10px !important;
-            /* width: 20px $; */
-
         }
 
         .bg1 {
@@ -67,16 +56,14 @@ background: linear-gradient(90deg, rgb(17, 17, 17) 24%, rgb(28, 26, 26) 100%);
             border-radius: 20px;
             text-align: center;
             color: rgb(188, 231, 45);
-            /* background-color: white; */
             padding: 10px !important;
             top: 0px;
             right: 0px;
         }
 
         .ins {
-                      font-family: "Nunito", sans-serif !important; 
+            font-family: "Nunito", sans-serif !important;
             background-color: rgb(50, 50, 50);
-            /* height: 400px; */
             position: fixed;
             z-index: 2;
             padding: 20px;
@@ -84,48 +71,37 @@ background: linear-gradient(90deg, rgb(17, 17, 17) 24%, rgb(28, 26, 26) 100%);
         }
 
         .ins1 {
-          
             background-color: rgb(37, 37, 37);
-            /* display: none !important; */
             position: fixed;
             opacity: 0;
             z-index: 2;
             font-family: "Press Start 2P", system-ui;
             padding: 20px;
-         
             border-radius: 15px;
         }
 
         .ins1>h6 {
-            /* font-weight: 700 !important; */
             color: rgb(226, 225, 225);
             font-size: 20px;
-            /* padding: 10px; */
         }
-h6{
-    color: white;
-    font-weight: 800;
-    /* padding: 4px 0px; */
-    /* text-decoration: underline 1px solid rgb(188, 231, 45);; */
-}
-        h3
-     {
-        font-weight: bolder;
-        text-transform: uppercase;
-        /* width: 20%; */
- background-color: rgb(188, 231, 45);;
-        color: rgb(69, 69, 69);
+
+        h6 {
+            color: white;
+            font-weight: 800;
+        }
+
+        h3 {
+            font-weight: bolder;
+            text-transform: uppercase;
+            background-color: rgb(188, 231, 45);
+            color: rgb(69, 69, 69);
             padding: 5px;
             border-radius: 5px;
             text-align: center;
-            /* background-color: rgb(255, 156, 103); */
-            ;
         }
 
         p {
             color: rgb(196, 195, 195);
-            /* font-size: 12px; */
-            /* font-weight: 300 !important; */
         }
 
         button {
@@ -134,134 +110,120 @@ h6{
             cursor: no-drop;
             text-align: center;
             background-color: transparent;
-            color:rgb(188, 231, 45);;
-            /* background-color:rgb(240, 177, 76)  */
+            color: rgb(188, 231, 45);
         }
-        #scr11{
-            color:rgb(188, 231, 45);;
-        }input{
+
+        #scr11 {
+            color: rgb(188, 231, 45);
+        }
+
+        input {
             background-color: rgb(69, 69, 69);
             outline: none;
-            position: absolute;display: none;
+            position: absolute;
+            display: none;
             bottom: 10px;
             border: none;
-                 color:rgb(188, 231, 45);;
+            color: rgb(188, 231, 45);
             padding: 5px 5px;
-        }input::placeholder{
+        }
+
+        input::placeholder {
             font-size: 10px;
             text-align: center;
         }
-@media (max-width:992px) {
-    input{
-        display: block;
-    }
-}
-</style>
+
+        @media (max-width: 992px) {
+            input {
+                display: block;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-fluid d-flex flex-column justify-content-center align-items-center">
         <div class="ins col-xl-4 col-9 " id="ins">
             <div class="d-flex justify-content-center align-items-center">
-            <h3 class="col-8">Instruction</h3>
-        </div>
+                <h3 class="col-8">Instruction</h3>
+            </div>
             <h6 class="col-1 mt-4"> Gameplay:</h6>
             <p>Press the matching key on your keyboard as quickly as possible.</p>
             <h6 class="col-xl-5 col-6">Winning Condition :</h6>
             <p>Achieve a score of 50 or more within the 30-second time limit to win.</p>
-            <!-- <h6 class="col-3">Good Luck:</h6>
-            <p>Stay focused and react swiftly. Practice to improve your speed and accuracy.</p> -->
             <div class="col-12 d-flex justify-content-center align-items-center">
-            <button id="str">Start Game</button>
+                <button id="str">Start Game</button>
+            </div>
         </div>
-        </div>
-        <div class="ins1  d-flex justify-content-center align-items-center flex-column col-xl-3 col-9" id="ins1">
-          
+        <div class="ins1 d-flex justify-content-center align-items-center flex-column col-xl-3 col-9" id="ins1">
         </div>
         <div class="fixed-top bg col-xl-2 col-5 ">
             <span class="">Score :<span id="scr">0</span> </span>
         </div>
-        <div class="   bg1 col-xl-2 col-5 ">
+        <div class="bg1 col-xl-2 col-5 ">
             <span class="">TIME : <span id="scr1">0</span> </span>
         </div>
         <div class="col-xl-7 col-11" id="main">
-            
         </div>
-        <input type="text" id="hiddenInput" placeholder="Press the matching key " >
+        <input type="text" id="hiddenInput" placeholder="Press the matching key ">
     </div>
     <script>
         document.getElementById("ins1").style.display = "none"
-        var gameover=false
-    
+        var gameover = false
+
         document.getElementById("str").addEventListener("click", () => {
-            // console.log("Re");
             document.getElementById("ins").style.display = "none"
             str()
-
         })
+
         var arr = []
         var score = 0
         var score1 = 0
         var letters = "abcdefghijklmnopqrstuvwxyz12345678910";
         var main = document.getElementById("main")
+
         function create() {
-       
             var div = document.createElement("div")
             var rand1 = Math.floor(Math.random() * letters.length)
             div.className = "box";
-
             div.innerHTML = letters[rand1]
-
             arr.push(div)
             main.appendChild(div)
-            // var inp;
-            // document.getElementById("hiddenInput").addEventListener("input",()=>{
-                // })
-                
-                // console.log(inp);
-                
-                document.getElementById("hiddenInput").addEventListener("input",()=>{
-                 
-                    var inp=document.getElementById("hiddenInput");
-    console.log(inp.value);
-                    if(gameover) return;
-                if (div.innerHTML === inp.value ) {
+
+            document.getElementById("hiddenInput").addEventListener("input", () => {
+                if (gameover) return;
+                var inp = document.getElementById("hiddenInput");
+                if (div.innerHTML === inp.value) {
                     document.getElementById("scr").innerHTML = score++;
                     main.removeChild(div)
-
+                    inp.value = ''; // Clear the input value after a correct match
                 }
             })
-            
+
             document.addEventListener("keypress", (e) => {
-                if(gameover) return;
-                if (e.key === div.innerHTML ) {
+                if (gameover) return;
+                if (e.key === div.innerHTML) {
                     document.getElementById("scr").innerHTML = score++;
                     main.removeChild(div)
-
                 }
             })
         }
+
         function move() {
             document.getElementById("scr1").innerHTML = score1++;
             if (score1 > 30) {
-                gameover=true;
+                gameover = true;
                 document.getElementById("ins1").style.opacity = "1";
                 var div = document.getElementById("ins1");
-                //   document.getElementById("ins").;
                 div.innerHTML = `
-
-    <h6  class="" >Progress :<span id="scr">${score}</span> </h6 ><BR>
-    <h6 class="" >Time :<span id="scr">${score1}</span> </h6 >
-    <BR>
-       <h6  class="" ><span id="scr11">Play Again
-    </span> </h6 >
-
-  `
+                    <h6>Progress :<span id="scr">${score}</span></h6><br>
+                    <h6>Time :<span id="scr">${score1}</span></h6><br>
+                    <h6><span id="scr11">Play Again</span></h6>
+                `
                 document.getElementById("scr11").addEventListener("click", () => {
                     location.reload()
                 })
                 stop()
-                //   document.removeEventListener(str)
             }
             for (var i = 0; i < arr.length; i++) {
                 var rand = Math.ceil(Math.random() * (main.offsetWidth - 40))
@@ -269,16 +231,12 @@ h6{
                 curpos += 60
                 arr[i].style.top = `${curpos}px`
                 arr[i].style.left = `${rand}px`
-
-
-                // console.log(main.offsetHeight);
                 if (curpos > main.offsetHeight - 70) {
                     arr[i].style.display = "none"
-                    // arr.splice(i,1)
                 }
             }
-            // console.log(arr);
         }
+
         var createInterval;
         var moveInterval;
 
@@ -286,13 +244,26 @@ h6{
             createInterval = setInterval(create, 750)
             moveInterval = setInterval(move, 700)
         }
+
         function stop() {
             clearInterval(createInterval);
             clearInterval(moveInterval);
         }
 
-        window.onload = function() {
-            document.getElementById("hiddenInput").focus();
+        window.onload = function () {
+            if (window.innerWidth <= 992) {
+                document.getElementById("hiddenInput").style.display = 'block';
+                document.getElementById("hiddenInput").focus();
+            }
+        };
+
+        window.onresize = function () {
+            if (window.innerWidth <= 992) {
+                document.getElementById("hiddenInput").style.display = 'block';
+                document.getElementById("hiddenInput").focus();
+            } else {
+                document.getElementById("hiddenInput").style.display = 'none';
+            }
         };
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
